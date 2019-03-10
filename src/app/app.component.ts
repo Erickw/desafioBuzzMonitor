@@ -7,9 +7,11 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 export interface BrandData {
   id: string;
   brand: string;
-  progress: string;
-  
+  progress: string;  
 }
+
+// Mock data for brands table
+
 const BRANDS: string[] = ['Habbibs', 'Bradesco', 'Buger King', 'Cacau Show', 'Claro', 'Bacio di Latte',
   'Acuvue', 'Firjan', 'Getnet', 'Globo', 'Trigo', 'GuiaBolso',
   'Honda', 'JBS', 'Localiza', 'Melissa', 'Oi'];
@@ -35,22 +37,22 @@ export class AppComponent implements OnInit {
     name: 'teste',
     activation_state: 'Activated',
     account_type: 'admin',
-    projects_limit: 5,
-    posts_per_month: 3,
-    analytics_limit: 4,
-    CRM_limit: 7,
+    projects_limit: 715,
+    posts_per_month: 878,
+    analytics_limit: 150,
+    CRM_limit: 123,
     unlimited_posts: false,
     unlimited_analytics: false,
     unlimited_CRM: false,
     unlimited_projects: false,
     pause_collect: false,
     unlimited_crawling: false,
-    crawling_quota: 'test'
+    crawling_quota: 58
   };
 
   constructor(public dialog: MatDialog) {
-    // Create 100 users
-    const users = Array.from({ length: 100 }, (_, k) => this.createNewUser(k + 1));
+    // Create 100 brands
+    const users = Array.from({ length: 100 }, (_, k) => this.createNewBrand(k + 1));
 
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(users);
@@ -69,7 +71,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  createNewUser(id: number): BrandData {
+  createNewBrand(id: number): BrandData {
     const brand =
       BRANDS[Math.round(Math.random() * (BRANDS.length - 1))] + ' ' +
       BRANDS[Math.round(Math.random() * (BRANDS.length - 1))].charAt(0) + '.';
@@ -80,7 +82,6 @@ export class AppComponent implements OnInit {
       progress: Math.round(Math.random() * 100).toString(),      
     };
   }
-
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogComponent, {

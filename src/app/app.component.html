@@ -85,7 +85,7 @@
             <h6>Projects Limit *</h6>
           </div>
           <div class="col-lg-3">
-            <input type="number" class="form-control" [disabled]="user.unlimited_projects" placeholder="{{user.id}}">
+            <input type="number" class="form-control" [disabled]="user.unlimited_projects" [value] = user.projects_limit placeholder="Quantity" >
           </div>
           <label class="label-responsivity ">
             <input type="checkbox" id="isCheckBox" (change)="onCheck($event, 'unlimited_projects')" />
@@ -100,7 +100,7 @@
             <h6>Posts Limit per month*</h6>
           </div>
           <div class="col-lg-3">
-            <input type="number" class="form-control" [disabled]="user.unlimited_posts" placeholder="Quantity">
+            <input type="number" class="form-control" [disabled]="user.unlimited_posts" [value] = user.posts_per_month placeholder="Quantity">
           </div>
           <label class="label-responsivity ">
             <input type="checkbox" id="isCheckBox" (change)="onCheck($event, 'unlimited_posts')" />
@@ -115,7 +115,7 @@
             <h6>Tracked analytics profiles limit*</h6>
           </div>
           <div class="col-lg-3">
-            <input type="number" class="form-control" [disabled]="user.unlimited_analytics" placeholder="Quantity">
+            <input type="number" class="form-control" [disabled]="user.unlimited_analytics" [value] = user.analytics_limit placeholder="Quantity">
           </div>
           <label class="label-responsivity ">
             <input type="checkbox" id="isCheckBox" (change)="onCheck($event, 'unlimited_analytics')" />
@@ -130,7 +130,7 @@
             <h6>CRM profiles Limit*</h6>
           </div>
           <div class="col-lg-3">
-            <input type="number" class="form-control" [disabled]="user.unlimited_CRM" placeholder="Quantity">
+            <input type="number" class="form-control" [disabled]="user.unlimited_CRM" [value] = user.CRM_limit placeholder="Quantity">
           </div>
           <label class="label-responsivity ">
             <input type="checkbox" id="isCheckBox" (change)="onCheck($event, 'unlimited_CRM')" />
@@ -145,7 +145,7 @@
             <h6>Crawling Quota</h6>
           </div>
           <div class="col-lg-3">
-            <input type="number" class="form-control" [disabled]="user.unlimited_crawling" placeholder="Quantity">
+            <input type="number" class="form-control" [disabled]="user.unlimited_crawling" [value] = user.crawling_quota placeholder="Quantity">
           </div>
           <label class="label-responsivity ">
             <input type="checkbox" id="isCheckBox" (change)="onCheck($event, 'unlimited_crawling')" />
