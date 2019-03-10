@@ -7,7 +7,7 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 export interface BrandData {
   id: string;
   brand: string;
-  progress: string;  
+  progress: string;
 }
 
 // Mock data for brands table
@@ -31,6 +31,8 @@ export class AppComponent implements OnInit {
 
   title = 'desafio';
   mycheckbox = true;
+
+  // Mock data for object user
 
   user: User = {
     id: '11231232321093@buzzmonitor.com.br',
@@ -79,7 +81,7 @@ export class AppComponent implements OnInit {
     return {
       id: id.toString(),
       brand: brand,
-      progress: Math.round(Math.random() * 100).toString(),      
+      progress: Math.round(Math.random() * 100).toString(),
     };
   }
 
